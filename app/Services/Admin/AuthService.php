@@ -9,6 +9,9 @@ use Illuminate\Validation\ValidationException;
 class AuthService
 {
     /**
+     * Teste de github
+     */
+    /**
      * @var string GUARD
      */
     const GUARD = 'admin';
