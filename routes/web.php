@@ -2,6 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/', '/student/welcome');
+Route::redirect('/', '/home');
 
-Route::fallback(fn() => redirect()->route('student.welcome'));
+Route::fallback(fn() => redirect()->route('site.home'));
