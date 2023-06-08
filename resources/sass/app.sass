@@ -1,0 +1,51 @@
+// Font-sizes
+@for $i from 1 through 100
+    .app-fs-#{$i}
+        font-size: #{$i}px
+
+// Font-weights
+@for $i from 1 through 1000
+    .app-fw-#{$i}
+        font-weight: #{$i}
+
+// Line-height
+@for $i from 1 through 100
+    .app-lh-#{$i}
+        line-height: #{$i}px
+
+// Border-radius
+@for $i from 1 through 100
+    .app-br-#{$i}
+        border-radius: #{$i}px
+
+    .app-br-tr-#{$i}
+        border-top-right-radius: #{$i}px
+
+    .app-br-tl-#{$i}
+        border-top-left-radius: #{$i}px
+
+    .app-br-br-#{$i}
+        border-bottom-right-radius: #{$i}px
+
+    .app-br-bl-#{$i}
+        border-bottom-left-radius: #{$i}px
+
+// Margin-top
+@for $i from 1 through 1000
+    .app-mt-#{$i}
+        margin-top: #{$i}px
+
+// Margin-left
+@for $i from 1 through 1000
+    .app-ml-#{$i}
+        margin-left: #{$i}px
+
+.app-text-with-underline
+    text-decoration: underline
+
+.app-player-iframe iframe
+    border: none
+    overflow: none
+    width: 100%
+    height: 40vw
+    border-radius: 16px
