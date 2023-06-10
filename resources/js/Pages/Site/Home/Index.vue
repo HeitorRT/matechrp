@@ -1,75 +1,48 @@
 <script setup>
-    import AuthenticatedLayout from '@/Layouts/Student/AuthenticatedLayout.vue';
-    import ShoppingCard from '@/Components/Student/Course/ShoppingCard.vue';
-
-    import Slider from '@/Components/Student/HighLight/Slider.vue';
-    import ContentHighLight from '@/Components/Student/HighLight/Content.vue';
-    import LiveEventHighLight from '@/Components/Student/HighLight/LiveEvent.vue';
-    import MeetingHighLight from '@/Components/Student/HighLight/Meeting.vue';
-
-    import Carrousel from '@/Components/Student/Carrousel/Index.vue';
-    import Item from '@/Components/Student/Content/Item.vue';
-
+    import MainLayout from '@/Layouts/Site/MainLayout.vue';
     import { Head } from '@inertiajs/inertia-vue3';
+    import { ref } from 'vue';
 
-    const props = defineProps({
-        errors: Object,
-        highlightItems: Object,
-        sections: Object,
-        courses: Array,
-    });
+    const slide = ref(1);
+    const autoplay = ref(true);
 </script>
 
 <template>
     <Head title="Home"/>
 
-    <AuthenticatedLayout>
-        <div>
-            <Slider :items="highlightItems">
-                <template v-slot="{ item }">
-                    <ContentHighLight
-                        :content="item"
-                        v-if="item.type === 'content'"
-                    />
-
-                    <LiveEventHighLight
-                        :liveEvent="item"
-                        v-if="item.type === 'liveEvent'"
-                    />
-
-                    <MeetingHighLight
-                        :meeting="item"
-                        v-if="item.type === 'meeting'"
-                    />
-                </template>
-            </Slider>
-        </div>
+    <MainLayout>
 
         <div>
-            <Carrousel
-                v-for="section in sections"
-                :title="section.name"
-                :items="section.contents"
+            <q-carousel
+                animated
+                v-model="slide"
+                infinite
+                :autoplay="autoplay"
+                arrows
+                transition-prev="slide-right"
+                transition-next="slide-left"
+                @mouseenter="autoplay = false"
+                @mouseleave="autoplay = true"
+                height="500px"
+                control-color="blue-grey-10"
             >
-                <template v-slot:item="{ item }">
-                    <Item :item="item"/>
-                </template>
-            </Carrousel>
+                <q-carousel-slide :name="1">
+                    <div class="row fit justify-center">
+                        <q-img class="rounded-borders col-6 full-height" src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2V0dXB8ZW58MHx8MHx8fDA%3D&w=1000&q=80" />
+                    </div>
+                </q-carousel-slide>   
+                <q-carousel-slide :name="2">
+                    <div class="row fit justify-center">
+                        <q-img class="rounded-borders col-6 full-height" src="https://images.unsplash.com/photo-1614179924047-e1ab49a0a0cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2FtaW5nJTIwc2V0dXB8ZW58MHx8MHx8fDA%3D&w=1000&q=80" />
+                    </div>
+                </q-carousel-slide>   
+                <q-carousel-slide :name="3">
+                    <div class="row fit justify-center">
+                        <q-img class="rounded-borders col-6 full-height" src="https://i.ytimg.com/vi/lgNeo7evtzk/maxresdefault.jpg" />
+                    </div>
+                </q-carousel-slide>                
+            </q-carousel>
         </div>
 
-        <div style="padding: 0 104px" v-if="courses.length > 0">
-            <div class="text-white app-fw-700 app-fs-27 app-lh-32 q-mb-md">
-                Cursos
-            </div>
-
-            <div class="row q-col-gutter-lg">
-                <div class="col-12 col-md-4" v-for="course in courses">
-                    <ShoppingCard
-                        :title="course.name"
-                        :imageUrl="course.image"
-                    />
-                </div>
-            </div>
-        </div>
-    </AuthenticatedLayout>
+    </MainLayout>
 </template>
