@@ -6,13 +6,13 @@
         route: 'site.home'
     }, {
         label: 'Quem somos',
-        // route: 'student.movie'
+        route: 'site.home'
     }, {
         label: 'Serviços',
-        // route: 'student.serie'
+        route: 'site.home'
     }, {
         label: 'Contato',
-        // route: 'student.live'
+        route: 'site.home'
     }];
 </script>
 
@@ -24,7 +24,7 @@
 
         <q-space />
 
-        <div class="row justify-center ">
+        <div class="row justify-center">
             <div
                 v-for="tab in tabs"
                 class="q-mr-xl app-lh-24 app-fs-19 cursor-pointer"
@@ -36,8 +36,8 @@
             >
                 {{ tab.label }}
             </div>
-
         </div>
+        
         <q-space />
 
     </q-toolbar>
