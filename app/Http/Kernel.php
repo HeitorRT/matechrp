@@ -44,11 +44,8 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-        'admin' => [
-            \App\Http\Middleware\Admin\HandleInertiaShare::class
-        ],
-        'student' => [
-            \App\Http\Middleware\Student\HandleInertiaShare::class
+        'site' => [
+            \App\Http\Middleware\Site\HandleInertiaShare::class
         ]
     ];
 

@@ -17,18 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->boolean('active')->default(true);
-            $table->timestamp('inactivated_at')->nullable();
-            $table->string('cpf')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('profile_image')->nullable();
-            $table->string('whereby_link')->nullable();
-            $table->boolean('is_system_user')->default(true);
-            $table->boolean('is_teacher')->default(false);
-            $table->boolean('is_partner')->default(false);
             $table->timestamps();
         });
     }
