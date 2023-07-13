@@ -89,11 +89,11 @@
                     <div class="col-4 col-md-4">
                         <div class="text-center">
                             <img :src="profileImage" class="student-edit-profile-avatar">
-                            <div class="student-edit-profile-link-photo app-mt-90 cursor-pointer" v-bind="dropZoneProfileImage.getRootProps()">
+                            <div class="student-edit-profile-link-photo app-my-90 cursor-pointer" v-bind="dropZoneProfileImage.getRootProps()">
                                 <input v-bind="dropZoneProfileImage.getInputProps()"/>
                                 Alterar foto
                             </div>
-                            <div class="student-edit-profile-text-logout app-mt-120 cursor-pointer" @click="logout">LOGOUT</div>
+                            <div class="student-edit-profile-text-logout app-my-120 cursor-pointer" @click="logout">LOGOUT</div>
                         </div>
                     </div>
 
@@ -102,7 +102,7 @@
                             <div class="student-edit-profile-text-name">{{ form.name }}</div>
                             <div class="student-edit-profile-text-light">Assinante desde {{ subscriberSince }}</div>
 
-                            <div class="student-edit-profile-text-data app-mt-50">Dados de acesso</div>
+                            <div class="student-edit-profile-text-data app-my-50">Dados de acesso</div>
                             <div class="student-edit-profile-text-label q-mt-md">E-mail</div>
                             <div class="student-edit-profile-text-light">{{ form.email }}</div>
 

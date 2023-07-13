@@ -32,7 +32,7 @@
 
 // Margin-top
 @for $i from 1 through 1000
-    .app-mt-#{$i}
+    .app-my-#{$i}
         margin-top: #{$i}px
 
 // Margin-left
@@ -53,9 +53,31 @@
 
 // Margin-vertical 
 @for $i from 1 through 1000
-    .app-mt-#{$i}
+    .app-my-#{$i}
         margin-top: #{$i}px
         margin-bottom: #{$i}px
+
+// Padding-horizontal 
+@for $i from 1 through 1000
+    .app-px-#{$i}
+        padding-right: #{$i}px
+        padding-left: #{$i}px
+
+// Padding-top
+@for $i from 1 through 1000
+    .app-pt-#{$i}
+        padding-top: #{$i}px
+
+// Padding-left
+@for $i from 1 through 1000
+    .app-pl-#{$i}
+        padding-left: #{$i}px
+
+// Padding-vertical 
+@for $i from 1 through 1000
+    .app-py-#{$i}
+        padding-top: #{$i}px
+        padding-bottom: #{$i}px
 
 .app-text-with-underline
     text-decoration: underline
