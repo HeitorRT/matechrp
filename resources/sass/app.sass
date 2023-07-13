@@ -35,13 +35,10 @@
     .app-my-#{$i}
         margin-top: #{$i}px
 
-// Margin-left
+// Margin-left and right
 @for $i from 1 through 1000
     .app-ml-#{$i}
         margin-left: #{$i}px
-
-// Margin-right
-@for $i from 1 through 1000
     .app-mr-#{$i}
         margin-right: #{$i}px
 
@@ -63,15 +60,19 @@
         padding-right: #{$i}px
         padding-left: #{$i}px
 
-// Padding-top
+// Padding-top and bottom
 @for $i from 1 through 1000
     .app-pt-#{$i}
         padding-top: #{$i}px
+    .app-pb-#{$i}
+        padding-bottom: #{$i}px
 
-// Padding-left
+// Padding left and right
 @for $i from 1 through 1000
     .app-pl-#{$i}
         padding-left: #{$i}px
+    .app-pr-#{$i}
+        padding-right: #{$i}px
 
 // Padding-vertical 
 @for $i from 1 through 1000

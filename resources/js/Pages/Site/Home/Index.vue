@@ -8,6 +8,7 @@
     const autoplay = ref(false);
     const autoplay2 = ref(false);
     const controlType = ref('push');
+    const splitterModel = ref(50);
 
 </script>
 
@@ -36,24 +37,19 @@
                     class="bg-grey-9 "
                 >
                     <q-carousel-slide :name="1" class="no-padding">
-                        <!-- <div class="row fit justify-center"> -->
-                            <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2V0dXB8ZW58MHx8MHx8fDA%3D&w=1000&q=80" />
-                        <!-- </div> -->
-                    </q-carousel-slide>   
+                        <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2V0dXB8ZW58MHx8MHx8fDA%3D&w=1000&q=80" />
+                    </q-carousel-slide>  
+
                     <q-carousel-slide :name="2" class="no-padding">
-                        <!-- <div class="row fit justify-center"> -->
-                            <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
-                        <!-- </div> -->
+                        <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
                     </q-carousel-slide>   
+
                     <q-carousel-slide :name="3" class="no-padding">
-                        <!-- <div class="row fit justify-center"> -->
-                            <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1590212151175-e58edd96185b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" />
-                        <!-- </div> -->
-                    </q-carousel-slide>      
+                        <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1590212151175-e58edd96185b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" />
+                    </q-carousel-slide>    
+
                     <q-carousel-slide :name="4" class="no-padding">
-                        <!-- <div class="row fit justify-center"> -->
-                            <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1594636797501-ef436e157819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
-                        <!-- </div> -->
+                        <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1594636797501-ef436e157819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
                     </q-carousel-slide>               
                 </q-carousel>
             </div>
@@ -62,7 +58,7 @@
         <div class="row bg-dark" style="height: 1vh;"/>
 
         <div class="row">
-            <div class="col-6 ">
+            <div class="col-12 col-md-5">
                 <div class="flex flex-center app-fs-30 app-fw-650 q-pt-lg">
                     Serviços
                 </div>
@@ -109,7 +105,6 @@
                     </q-carousel-slide>
 
                     <template v-slot:control>
-
                         <q-carousel-control
                             position="bottom-left"
                             :offset="[25, 60]"
@@ -127,16 +122,22 @@
                     </template>            
                 </q-carousel>
 
-            </div>       
+            </div>   
 
-            <div class="col-6 bg-grey-3">
-                <div class="flex flex-center app-px-150 app-py-110">
-                    <div class="app-fs-15 app-fw-200">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            <div class="col-12 col-md-2 flex flex-center">
+                <div class="bg-dark" style="height: 90%; width: 1px;"/>
+            </div>
+
+            <div class="col-12 col-md-5 bg-grey-3 flex flex-center">
+                <div class="app-mr-50">
+                    <div class="app-py-100">
+                        <div class="app-fs-15 app-fw-200">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </div>
                     </div>
-                </div>
-                <div class="flex flex-center app-fs-30 app-fw-650 ">
-                    Assistências Autorizadas
+                    <div class="flex flex-center app-fs-30 app-fw-650">
+                        Assistências Autorizadas
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,9 +145,9 @@
         <div class="row bg-dark" style="height: 1vh;"/>
 
         <div class="row">
-            <div class="col-4 " style="height: 500px;">
-                <div class="rounded-borders bg-blue q-mx-xl">
-                    <div class="flex flex-center app-fs-19 app-fw-650 q-mt-xl q-pt-md">
+            <div class="col-12 col-md-4 flex flex-center" style="height: 500px;">
+                <div class="rounded-borders q-mx-xl" style="border: 1px solid;">
+                    <div class="flex flex-center app-fs-19 app-fw-650 q-pt-md">
                         Como solicitar orçamento
                     </div>
                     <div class="flex flex-center app-px-80 q-py-lg">
@@ -156,9 +157,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 bg-blue-14" style="height: 500px;">
-                <div class="rounded-borders bg-blue q-mx-xl">
-                    <div class="flex flex-center app-fs-19 app-fw-650 q-mt-xl q-pt-md">
+            <div class="col-12 col-md-4 flex flex-center" style="height: 500px;">
+                <div class="rounded-borders q-mx-xl" style="border: 1px solid;">
+                    <div class="flex flex-center app-fs-19 app-fw-650 q-pt-md">
                         Análise e diagnóstico do equipamento
                     </div>
                     <div class="flex flex-center app-px-80 q-py-lg">
@@ -168,9 +169,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 bg-yellow-14" style="height: 500px;">
-                <div class="rounded-borders bg-blue q-mx-xl">
-                    <div class="flex flex-center app-fs-19 app-fw-650 q-mt-xl q-pt-md">
+            <div class="col-12 col-md-4 flex flex-center" style="height: 500px;">
+                <div class="rounded-borders q-mx-xl" style="border: 1px solid;">
+                    <div class="flex flex-center app-fs-19 app-fw-650 q-pt-md">
                         Processo de reparo do equipamento
                     </div>
                     <div class="flex flex-center app-px-80 q-py-lg">
