@@ -25,7 +25,7 @@
         route: 'site.teste'
     }, {
         label: 'Contato',
-        route: 'site.teste'
+        route: 'site.contact'
     }];
 
     const isMobile = computed(() => !$q.screen.gt.sm)
