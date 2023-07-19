@@ -22,10 +22,10 @@
         route: 'site.about-us'
     }, {
         label: 'Serviços',
-        route: 'site.teste'
+        route: 'site.services'
     }, {
         label: 'Contato',
-        route: 'site.teste'
+        route: 'site.contact'
     }];
 
     const isMobile = computed(() => !$q.screen.gt.sm)
