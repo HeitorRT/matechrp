@@ -12,6 +12,6 @@ class HomeController extends Controller
      */
     public function index(): Response
     {
-        return inertia('Site/Home/Index');
+        return inertia('Site/Home/Index2');
     }
 }
