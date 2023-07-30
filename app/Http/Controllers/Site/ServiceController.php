@@ -14,4 +14,12 @@ class ServiceController extends Controller
     {
         return inertia('Site/Services/Index');
     }
+
+    /**
+     * @return Response
+     */
+    public function show(): Response
+    {
+        return inertia('Site/Services/Index');
+    }
 }
