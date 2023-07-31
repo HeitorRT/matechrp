@@ -6,7 +6,6 @@
 
     const slide = ref(1);
     const autoplay = ref(false);
-    const mouseOver = ref(false);
 
     const services = computed(() => [{
         id: 1,
@@ -48,6 +47,8 @@
 
     // const showService = () => useForm().get(route('admin.content.titles.show', props.content.id))
     // const showService = () => useForm().get(route('admin.content.index'))
+
+    const mouseOverIndex = ref(null);
 </script>
 
 <template>
@@ -60,7 +61,6 @@
                     animated
                     swipeable
                     v-model="slide"
-                    arrows
                     infinite
                     :autoplay="autoplay"
                     transition-prev="slide-right"
@@ -69,6 +69,7 @@
                     @mouseleave="autoplay = true"
                     height="730px"
                     class="bg-grey-9 shadow-5 rounded-borders"
+                    ref="carousel"
                 >
                     <q-carousel-slide :name="1" class="no-padding">
                         <q-img class="col-12 full-height" src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2V0dXB8ZW58MHx8MHx8fDA%3D&w=1000&q=80" />
@@ -85,6 +86,41 @@
                     <q-carousel-slide :name="4" class="no-padding">
                         <q-img class="col-12 full-height" src="https://images.unsplash.com/photo-1594636797501-ef436e157819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
                     </q-carousel-slide>  
+
+                    <template v-slot:control>
+                        <q-carousel-control
+                            position="left"
+                            :offset="[-30, 300]"
+                        >
+                            <q-btn
+                                color="white"
+                                padding="none"
+                                flat
+                                dense
+                                @click="$refs.carousel.previous()"
+                                unelevated
+                                style="padding-right: 0px; !important"
+                            >
+                                <q-icon name="sym_o_chevron_left" size="150px"/>
+                            </q-btn>
+                        </q-carousel-control>
+
+                        <q-carousel-control
+                            position="right"
+                            :offset="[-30, 300]"
+                        >
+                            <q-btn
+                                color="white"
+                                padding="none"
+                                flat
+                                dense
+                                @click="$refs.carousel.next()"
+                                unelevated
+                            >
+                                <q-icon name="sym_o_chevron_right" size="150px"/>
+                            </q-btn>
+                        </q-carousel-control>
+                    </template>
                                 
                 </q-carousel>
             </div>
@@ -102,8 +138,8 @@
                                 <div style="margin: 0 24px 0 0;">
                                     <div
                                         class="student-img-hover-zoom cursor-pointer app-br-16"
-                                        @mouseover="mouseOver = true"
-                                        @mouseleave="mouseOver = false"
+                                        @mouseover="mouseOverIndex = index"
+                                        @mouseleave="mouseOverIndex = null"
                                     >
                                         <q-img
                                             :src="service.srcImg"
@@ -111,8 +147,8 @@
                                             width="373px"
                                             height="500px"
                                         >
-                                            <div class="absolute-full text-subtitle2 flex flex-center" :class="{ transparent: !mouseOver }">
-                                                <div class="flex flex-center" v-if="mouseOver">
+                                            <div class="absolute-full text-subtitle2 flex flex-center" :class="{ transparent: mouseOverIndex != index }">
+                                                <div class="flex flex-center" v-if="mouseOverIndex == index">
                                                     <div class="q-mr-sm app-fs-14 text-uppercase">
                                                         Ver mais
                                                     </div>
@@ -205,7 +241,6 @@
             </div>
         </div>
 
-        
         <div class="row flex flex-center bg-dark q-py-xl">
             <iframe 
                 class="col-11"
