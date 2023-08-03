@@ -20,6 +20,6 @@ class ServiceController extends Controller
      */
     public function show(): Response
     {
-        return inertia('Site/Services/Index');
+        return inertia('Site/Services/Show');
     }
 }

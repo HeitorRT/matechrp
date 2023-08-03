@@ -137,7 +137,7 @@
                             <div v-for="(service, index) in services" :key="index">
                                 <div style="margin: 0 24px 0 0;">
                                     <div
-                                        class="student-img-hover-zoom cursor-pointer app-br-16"
+                                        class="site-img-hover-zoom cursor-pointer app-br-16"
                                         @mouseover="mouseOverIndex = index"
                                         @mouseleave="mouseOverIndex = null"
                                     >
