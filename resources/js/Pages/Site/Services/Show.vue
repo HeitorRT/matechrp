@@ -55,10 +55,9 @@
                     TELEVISORES E MONITORES
                 </div>
             </div>
-
-            <div class="site-container-content q-py-xl">
-                <div class="q-pa-md " style="height: 1000px; border-radius: 20px;">
-                    <div class="row">
+            <div class="site-container-content">
+                <div class="q-pa-md" style="height: 800px; border-radius: 20px;">
+                    <div class="row q-my-lg">
                         <div class="col-5 flex flex-center">
                             <div>
                                 <div class="app-fs-36 q-my-lg">
@@ -73,47 +72,31 @@
                             </q-img>
                         </div>
                     </div>
-                    <div class="row bg-red" style="height: 100px;">
-
+                    <div class="row flex flex-center app-fs-36 q-mb-lg">
+                        Recomendações para este serviço
                     </div>
-                    <!-- <div lass="row justify-center q-gutter-md">
-                        <q-intersection
-                            v-for="service in services"
-                            transition="scale"
-                            transition-duration="1500"
-                            style=" width: 300px"
-                            class="bg-white app-br-16"
-                        >
-                            <q-card flat class="app-br-16">
-                                <q-img :src="service.srcImg" height="250px">
-                                    <div class="absolute-bottom text-uppercase text-no-wrap">
-                                        <q-icon :name="service.icon" size="xs" class="q-ml-sm"/>
-
-                                        {{ service.title }}
-                                    </div>
-                                </q-img>
-                        
-                                <q-card-section style="height: 130px;">
-                                    <div class="text-subtitle2"> {{ service.text }} </div>
-                                </q-card-section>
-
-                                <q-card-section class="q-pa-none">
-                                    <q-btn
-                                        @click="showService(service.id)"
-                                        color="blue"
-                                        class="full-width app-br-br-16 app-br-bl-16"
-                                        flat
-                                    >
-                                        <div class="q-mr-sm app-fs-14">
-                                            Ver mais 
-                                        </div>
-
-                                        <q-icon name="arrow_right_alt" size="xs"/>
-                                    </q-btn>
-                                </q-card-section>
-                            </q-card>
-                        </q-intersection>
-                    </div>c -->
+                    <div class="row q-pb-lg justify-center">
+                        <div class="col-3 rounded-borders bg-dark text-white text-center q-pa-lg" style="border: 10px solid white;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </div>
+                        <div class="col-3 rounded-borders bg-dark text-white text-center q-pa-lg q-mx-xl" style="border: 10px solid white;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </div>
+                        <div class="col-3 rounded-borders bg-dark text-white text-center q-pa-lg" style="border: 10px solid white;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </div>
+                    </div>
+                    <div class="row q-pb-lg justify-center">
+                        <div class="col-3 rounded-borders bg-dark text-white text-center q-pa-lg" style="border: 10px solid white;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </div>
+                        <div class="col-3 rounded-borders bg-dark text-white text-center q-pa-lg q-mx-xl" style="border: 10px solid white;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </div>
+                        <div class="col-3 rounded-borders bg-dark text-white text-center q-pa-lg" style="border: 10px solid white;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

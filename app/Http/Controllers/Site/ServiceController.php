@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\DTO\ServicesDTO;
 use App\Http\Controllers\Controller;
 use Inertia\Response;
 
@@ -12,14 +13,17 @@ class ServiceController extends Controller
      */
     public function index(): Response
     {
-        return inertia('Site/Services/Index');
+        $services = (new ServicesDTO)->getAll();
+
+        return inertia('Site/Services/Index', ['services' => $services]);
     }
 
     /**
      * @return Response
      */
-    public function show(): Response
+    public function show(int $id): Response
     {
+        dd($id);
         return inertia('Site/Services/Show');
     }
 }
