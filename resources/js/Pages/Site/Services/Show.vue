@@ -41,7 +41,7 @@
         icon: 'sports_esports'
     }])
 
-    const showService = () => useForm().get(route('admin.content.titles.show', props.content.id))
+    const goBack = () => useForm().get(route('admin.content.titles.show'))
    
 </script>
 
@@ -50,13 +50,24 @@
 
     <MainLayout>
         <div class="row">
-            <div class="site-container-core bg-dark column flex-center q-mt-xl" style="height: 100px;">
-                <div class="text-white app-fs-40 app-fw-650">
+            <div class="bg-dark q-mt-xl" style="height: 100px; width: 100%;">
+                <q-btn
+                    color="white"
+                    class="absolute"
+                    label="Voltar"
+                    style="top: 80px; left: 15%"
+                    flat
+                    icon="arrow_back"
+                    @click="goBack"
+                    size="md"
+                />
+
+                <div class="fit flex flex-center text-white app-fs-40 app-fw-650">
                     TELEVISORES E MONITORES
                 </div>
             </div>
             <div class="site-container-content">
-                <div class="q-pa-md" style="height: 800px; border-radius: 20px;">
+                <div class="q-pa-md" style="border-radius: 20px;">
                     <div class="row q-my-lg">
                         <div class="col-5 flex flex-center">
                             <div>

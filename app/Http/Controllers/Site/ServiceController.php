@@ -23,7 +23,6 @@ class ServiceController extends Controller
      */
     public function show(int $id): Response
     {
-        dd($id);
         return inertia('Site/Services/Show');
     }
 }
