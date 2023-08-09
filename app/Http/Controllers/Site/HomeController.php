@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\DTO\ServicesDTO;
 use App\Http\Controllers\Controller;
 use Inertia\Response;
 
@@ -12,6 +13,8 @@ class HomeController extends Controller
      */
     public function index(): Response
     {
-        return inertia('Site/Home/Index2');
+        $services = (new ServicesDTO)->getAll();
+
+        return inertia('Site/Home/Index', ['services' => $services]);
     }
 }

@@ -2,187 +2,218 @@
     import MainLayout from '@/Layouts/Site/MainLayout.vue';
     import { Head } from '@inertiajs/inertia-vue3';
     import { ref } from 'vue';
+    import VueHorizontal from "vue-horizontal";
+
+    const props = defineProps({
+        services: Object,
+    });
 
     const slide = ref(1);
-    const slide2 = ref(1);
     const autoplay = ref(false);
-    const autoplay2 = ref(false);
-    const controlType = ref('push');
-    const splitterModel = ref(50);
 
+    const mouseOverIndex = ref(null);
 </script>
 
 <template>
     <Head title="Home"/>
 
     <MainLayout>
-        <div class="row bg-dark" style="height: 1vh;"/>
-
-        <div class="row">
-            <div class="col-12">
+        <div class="row flex flex-center">
+            <div class="col-11 q-py-xl">
                 <q-carousel
                     animated
                     swipeable
                     v-model="slide"
                     infinite
                     :autoplay="autoplay"
-                    arrows
                     transition-prev="slide-right"
                     transition-next="slide-left"
                     @mouseenter="autoplay = false"
                     @mouseleave="autoplay = true"
-                    height="500px"
-                    control-color="blue-grey-10"
-                    :control-type="controlType"
-                    class="bg-grey-9 "
+                    height="730px"
+                    class="bg-grey-9 shadow-5 rounded-borders"
+                    ref="carousel"
                 >
                     <q-carousel-slide :name="1" class="no-padding">
-                        <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2V0dXB8ZW58MHx8MHx8fDA%3D&w=1000&q=80" />
+                        <q-img class="col-12 full-height" src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2V0dXB8ZW58MHx8MHx8fDA%3D&w=1000&q=80" />
                     </q-carousel-slide>  
 
                     <q-carousel-slide :name="2" class="no-padding">
-                        <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
+                        <q-img class="col-12 full-height" src="https://images.unsplash.com/photo-1542315192-1f61a1792f33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
                     </q-carousel-slide>   
 
                     <q-carousel-slide :name="3" class="no-padding">
-                        <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1590212151175-e58edd96185b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" />
+                        <q-img class="col-12 full-height" src="https://images.unsplash.com/photo-1590212151175-e58edd96185b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" />
                     </q-carousel-slide>    
 
                     <q-carousel-slide :name="4" class="no-padding">
-                        <q-img class="col-11 full-height" src="https://images.unsplash.com/photo-1594636797501-ef436e157819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
-                    </q-carousel-slide>               
+                        <q-img class="col-12 full-height" src="https://images.unsplash.com/photo-1594636797501-ef436e157819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />
+                    </q-carousel-slide>  
+
+                    <template v-slot:control>
+                        <q-carousel-control
+                            position="left"
+                            :offset="[-30, 300]"
+                        >
+                            <q-btn
+                                color="white"
+                                padding="none"
+                                flat
+                                dense
+                                @click="$refs.carousel.previous()"
+                                unelevated
+                                style="padding-right: 0px; !important"
+                            >
+                                <q-icon name="sym_o_chevron_left" size="150px"/>
+                            </q-btn>
+                        </q-carousel-control>
+
+                        <q-carousel-control
+                            position="right"
+                            :offset="[-30, 300]"
+                        >
+                            <q-btn
+                                color="white"
+                                padding="none"
+                                flat
+                                dense
+                                @click="$refs.carousel.next()"
+                                unelevated
+                            >
+                                <q-icon name="sym_o_chevron_right" size="150px"/>
+                            </q-btn>
+                        </q-carousel-control>
+                    </template>
+                                
                 </q-carousel>
             </div>
         </div>
         
-        <div class="row bg-dark" style="height: 1vh;"/>
-
-        <div class="row">
-            <div class="col-12 col-md-5">
-                <div class="flex flex-center app-fs-30 app-fw-650 q-pt-lg">
+        <div class="row flex flex-center app-my-100 bg-dark">
+            <div class="col-11 app-br-16">
+                <div class="flex flex-center text-white app-fs-30 app-fw-650 q-mt-xl q-mb-xl">
                     Serviços
                 </div>
-                <q-carousel
-                    animated
-                    swipeable
-                    v-model="slide2"
-                    infinite
-                    :autoplay="autoplay2"
-                    transition-prev="slide-right"
-                    transition-next="slide-left"
-                    @mouseenter="autoplay2 = false"
-                    @mouseleave="autoplay2 = true"
-                    height="550px"
-                    class="bg-grey-3 q-py-xl q-px-md"
-                    ref="carousel"
-                >
-                    <q-carousel-slide :name="1" class="column no-wrap no-padding ">
-                        <div class="row fit justify-center items-center q-gutter-sm q-col-gutter no-wrap">
-                            <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/mountains.jpg" />
-                            <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/parallax1.jpg" />
-                        </div>
-                    </q-carousel-slide>   
-                    
-                    <q-carousel-slide :name="2" class="column no-wrap no-padding">
-                        <div class="row fit justify-center items-center q-gutter-sm q-col-gutter no-wrap">
-                            <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/parallax2.jpg" />
-                            <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/quasar.jpg" />
-                        </div>
-                    </q-carousel-slide>
+                <div class="row flex flex-center">
+                    <div class="col-11 q-mb-xl" style="max-width: 100vw">
+                        <VueHorizontal :button-between="false">
+                            <div v-for="(service, index) in props.services" :key="index">
+                                <div style="margin: 0 24px 0 0;">
+                                    <div
+                                        class="site-img-hover-zoom cursor-pointer app-br-16"
+                                        @mouseover="mouseOverIndex = index"
+                                        @mouseleave="mouseOverIndex = null"
+                                    >
+                                        <q-img
+                                            :src="service.srcImg"
+                                            class="app-br-16"
+                                            width="373px"
+                                            height="500px"
+                                        >
+                                            <div class="absolute-full text-subtitle2 flex flex-center" :class="{ transparent: mouseOverIndex != index }">
+                                                <div class="flex flex-center" v-if="mouseOverIndex == index">
+                                                    <div class="q-mr-sm app-fs-14 text-uppercase">
+                                                        Ver mais
+                                                    </div>
 
-                    <q-carousel-slide :name="3" class="column no-wrap no-padding">
-                        <div class="row fit justify-center items-center q-gutter-sm q-col-gutter no-wrap">
-                            <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/cat.jpg" />
-                            <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/linux-avatar.png" />
-                        </div>
-                    </q-carousel-slide>
+                                                    <q-icon name="arrow_right_alt" size="xs"/>
+                                                </div>
+                                            </div>
+                                            <div class="absolute-bottom text-uppercase text-no-wrap">
+                                                <q-icon :name="service.icon" size="xs" class="q-ml-sm"/>
 
-                    <q-carousel-slide :name="4" class="column no-wrap no-padding">
-                        <div class="row fit justify-center items-center q-gutter-sm q-col-gutter no-wrap">
-                            <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/material.png" />
-                            <q-img class="rounded-borders col-6 full-height" src="https://cdn.quasar.dev/img/donuts.png" />
-                        </div>
-                    </q-carousel-slide>
+                                                {{ service.title }}
+                                            </div>
+                                        </q-img>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <template v-slot:control>
-                        <q-carousel-control
-                            position="bottom-left"
-                            :offset="[25, 60]"
-                            class="q-gutter-xs"
-                        >
-                        <q-btn
-                            push round dense color="blue-grey" text-color="white" icon="arrow_left"
-                            @click="$refs.carousel.previous()"
-                        />
-                        <q-btn
-                            push round dense color="blue-grey" text-color="white" icon="arrow_right"
-                            @click="$refs.carousel.next()"
-                        />
-                        </q-carousel-control>
-                    </template>            
-                </q-carousel>
+                            <template v-slot:btn-next>
+                                <q-btn
+                                    round
+                                    dense
+                                    flat
+                                    color="white"
+                                    class="q-mr-lg"
+                                >
+                                    <q-icon name="chevron_right" size="40px" />
+                                </q-btn>
+                            </template>
 
-            </div>   
-
-            <div class="col-12 col-md-2 flex flex-center">
-                <div class="bg-dark" style="height: 90%; width: 1px;"/>
-            </div>
-
-            <div class="col-12 col-md-5 bg-grey-3 flex flex-center">
-                <div class="app-mr-50">
-                    <div class="app-py-100">
-                        <div class="app-fs-15 app-fw-200">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </div>
-                    </div>
-                    <div class="flex flex-center app-fs-30 app-fw-650">
-                        Assistências Autorizadas
+                            <template v-slot:btn-prev>
+                                <q-btn
+                                    round
+                                    dense
+                                    flat
+                                    color="white"
+                                    class="q-ml-lg"
+                                >
+                                    <q-icon name="chevron_left" size="40px" />
+                                </q-btn>
+                            </template>
+                        </VueHorizontal>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row bg-dark" style="height: 1vh;"/>
-
-        <div class="row">
-            <div class="col-12 col-md-4 flex flex-center" style="height: 500px;">
-                <div class="rounded-borders q-mx-xl" style="border: 1px solid;">
-                    <div class="flex flex-center app-fs-19 app-fw-650 q-pt-md">
-                        Como solicitar orçamento
-                    </div>
-                    <div class="flex flex-center app-px-80 q-py-lg">
-                        <div class="app-fs-15 app-fw-200 ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh eget porta rhoncus. Vestibulum egestas vel nibh pretium dictum. Ut consequat ligula neque, non pulvinar ipsum blandit sed. Mauris sit amet nunc magna. Aenean sed volutpat ligula. Morbi gravida orci in nisl finibus rhoncus. Sed facilisis eros non justo imperdiet, id aliquam neque sagittis. Aliquam euismod sollicitudin lorem at mattis.
+        
+        <div class="row flex flex-center">
+            <div class="col-11 q-mb-xl">
+                <div class="flex flex-center app-fs-30 app-fw-650 q-mb-xl">
+                    Nossos processos
+                </div>
+                <div class="row flex flex-center">
+                    <div class="col-3 app-mx-60" style="height: 500px;">
+                        <div class="rounded-borders bg-white flex flex-center" style="border: 1px solid;">
+                            <div class="app-fs-19 app-fw-650 q-pt-md">
+                                Como solicitar orçamento
+                            </div>
+                            <div class="app-mx-40 q-py-lg">
+                                <div class="app-fs-15 app-fw-200">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh eget porta rhoncus. Vestibulum egestas vel nibh pretium dictum. Ut consequat ligula neque, non pulvinar ipsum blandit sed. Mauris sit amet nunc magna. Aenean sed volutpat ligula. Morbi gravida orci in nisl finibus rhoncus. Sed facilisis eros non justo imperdiet, id aliquam neque sagittis. Aliquam euismod sollicitudin lorem at mattis.
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 flex flex-center" style="height: 500px;">
-                <div class="rounded-borders q-mx-xl" style="border: 1px solid;">
-                    <div class="flex flex-center app-fs-19 app-fw-650 q-pt-md">
-                        Análise e diagnóstico do equipamento
-                    </div>
-                    <div class="flex flex-center app-px-80 q-py-lg">
-                        <div class="app-fs-15 app-fw-200 ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh eget porta rhoncus. Vestibulum egestas vel nibh pretium dictum. Ut consequat ligula neque, non pulvinar ipsum blandit sed. Mauris sit amet nunc magna. Aenean sed volutpat ligula. Morbi gravida orci in nisl finibus rhoncus. Sed facilisis eros non justo imperdiet, id aliquam neque sagittis. Aliquam euismod sollicitudin lorem at mattis.
+                    <div class="col-3 app-mx-60" style="height: 500px;">
+                        <div class="rounded-borders bg-white flex flex-center" style="border: 1px solid;">
+                            <div class="app-fs-19 app-fw-650 q-pt-md">
+                                Como solicitar orçamento
+                            </div>
+                            <div class="app-mx-40 q-py-lg">
+                                <div class="app-fs-15 app-fw-200">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh eget porta rhoncus. Vestibulum egestas vel nibh pretium dictum. Ut consequat ligula neque, non pulvinar ipsum blandit sed. Mauris sit amet nunc magna. Aenean sed volutpat ligula. Morbi gravida orci in nisl finibus rhoncus. Sed facilisis eros non justo imperdiet, id aliquam neque sagittis. Aliquam euismod sollicitudin lorem at mattis.
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 flex flex-center" style="height: 500px;">
-                <div class="rounded-borders q-mx-xl" style="border: 1px solid;">
-                    <div class="flex flex-center app-fs-19 app-fw-650 q-pt-md">
-                        Processo de reparo do equipamento
-                    </div>
-                    <div class="flex flex-center app-px-80 q-py-lg">
-                        <div class="app-fs-15 app-fw-200 ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh eget porta rhoncus. Vestibulum egestas vel nibh pretium dictum. Ut consequat ligula neque, non pulvinar ipsum blandit sed. Mauris sit amet nunc magna. Aenean sed volutpat ligula. Morbi gravida orci in nisl finibus rhoncus. Sed facilisis eros non justo imperdiet, id aliquam neque sagittis. Aliquam euismod sollicitudin lorem at mattis.
+                    <div class="col-3 app-mx-60" style="height: 500px;">
+                        <div class="rounded-borders bg-white flex flex-center" style="border: 1px solid;">
+                            <div class="app-fs-19 app-fw-650 q-pt-md">
+                                Como solicitar orçamento
+                            </div>
+                            <div class="app-mx-40 q-py-lg">
+                                <div class="app-fs-15 app-fw-200">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh eget porta rhoncus. Vestibulum egestas vel nibh pretium dictum. Ut consequat ligula neque, non pulvinar ipsum blandit sed. Mauris sit amet nunc magna. Aenean sed volutpat ligula. Morbi gravida orci in nisl finibus rhoncus. Sed facilisis eros non justo imperdiet, id aliquam neque sagittis. Aliquam euismod sollicitudin lorem at mattis.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row bg-dark" style="height: 1vh;"/>
+        <div class="row flex flex-center bg-dark q-py-xl">
+            <iframe 
+                class="col-11"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6326.896027282484!2d-46.64570939219926!3d-23.598067506081108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a264d6b6611%3A0xae18ff6a2797997b!2sHospital%20S%C3%A3o%20Paulo!5e1!3m2!1spt-BR!2sbr!4v1690757710215!5m2!1spt-BR!2sbr" 
+                style="border:0; height: 700px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+        </div>
     </MainLayout>
 </template>
