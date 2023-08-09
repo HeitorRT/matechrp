@@ -17,4 +17,12 @@ class HomeController extends Controller
 
         return inertia('Site/Home/Index', ['services' => $services]);
     }
+
+    /**
+     * @return Response
+     */
+    public function soon(): Response
+    {
+        return inertia('Site/Home/Soon');
+    }
 }
