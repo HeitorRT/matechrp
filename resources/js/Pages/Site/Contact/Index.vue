@@ -144,16 +144,14 @@
                 </div>
             </div>
 
-            <div class="q-py-xl site-container-core">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6326.896027282484!2d-46.64570939219926!3d-23.598067506081108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a264d6b6611%3A0xae18ff6a2797997b!2sHospital%20S%C3%A3o%20Paulo!5e1!3m2!1spt-BR!2sbr!4v1690757710215!5m2!1spt-BR!2sbr" 
-                    allowfullscreen="" 
-                    style="width: 100%; height: 700px;"
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                >
-                </iframe>
-            </div>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6326.896027282484!2d-46.64570939219926!3d-23.598067506081108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a264d6b6611%3A0xae18ff6a2797997b!2sHospital%20S%C3%A3o%20Paulo!5e1!3m2!1spt-BR!2sbr!4v1690757710215!5m2!1spt-BR!2sbr" 
+                allowfullscreen="" 
+                style="width: 100%; height: 700px;"
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
         </div>
     </MainLayout>
 </template>

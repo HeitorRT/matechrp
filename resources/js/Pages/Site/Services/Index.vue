@@ -65,7 +65,7 @@
                             </q-card>
                         </q-intersection>
                     </div>
-            </div>
+                </div>
             </div>
         </div>
     </MainLayout>
