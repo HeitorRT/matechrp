@@ -17,7 +17,7 @@ class IpMiddleware
     public function handle(Request $request, Closure $next)
     {
         $ip = $request->ip();
-        if ($ip === '177.74.184.175' || config('app.env') === 'local') {
+        if ($ip === '177.200.68.192' || config('app.env') === 'local') {
             return $next($request);
         }
 
