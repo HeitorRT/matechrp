@@ -1,0 +1,1 @@
+import{c as e,a,u as t,F as s,b as o,o as r,H as c}from"./app.a05cf889.js";const n=o("div",{class:"absolute-center"}," Em breve ",-1),d={__name:"Soon",setup(_){return(l,m)=>(r(),e(s,null,[a(t(c),{title:"Home"}),n],64))}};export{d as default};
