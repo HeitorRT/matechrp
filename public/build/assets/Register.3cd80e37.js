@@ -1,0 +1,1 @@
+import{G as e}from"./GuestLayout.e70f9b33.js";import{u as a,c as s,w as t,o as r,a as o,b as m,H as c}from"./app.cc606831.js";import"./_plugin-vue_export-helper.cdc0426e.js";const f={__name:"Register",setup(i){return a({name:"",email:"",password:"",password_confirmation:"",terms:!1}),(n,u)=>(r(),s(e,null,{default:t(()=>[o(m(c),{title:"Register"})]),_:1}))}};export{f as default};
