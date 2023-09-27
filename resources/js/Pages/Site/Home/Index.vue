@@ -17,7 +17,7 @@
 </script>
 
 <template>
-    <Head title="Home teste"/>
+    <Head title="Home"/>
 
     <MainLayout>
         <div class="row flex flex-center">
