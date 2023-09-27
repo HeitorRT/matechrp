@@ -145,7 +145,7 @@
                 Nossos processos
             </div>
 
-            <div class="row q-col-gutter-lg">
+            <div class="row q-col-gutter-md">
                 <div 
                     class="col-12 col-md-3"
                     v-for="process, index in ourProcesses"
