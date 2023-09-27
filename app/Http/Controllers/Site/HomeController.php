@@ -26,14 +26,17 @@ class HomeController extends Controller
         ]);
 
         $ourProcesses = collect()->push([
-            'title' => 'Como solicitar orçamento',
-            'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh eget porta rhoncus. Vestibulum egestas vel nibh pretium dictum. Ut consequat ligula neque, non pulvinar ipsum blandit sed. Mauris sit amet nunc magna. Aenean sed volutpat ligula. Morbi gravida orci in nisl finibus rhoncus. Sed facilisis eros non justo imperdiet, id aliquam neque sagittis. Aliquam euismod sollicitudin lorem at mattis.'
+            'title' => 'Atendimento',
+            'text' => 'Acesso ao técnico para detalhes. Orçamento Express. Profissionais capacitados'
         ])->push([
-            'title' => 'Como solicitar orçamento',
-            'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh eget porta rhoncus. Vestibulum egestas vel nibh pretium dictum. Ut consequat ligula neque, non pulvinar ipsum blandit sed. Mauris sit amet nunc magna. Aenean sed volutpat ligula. Morbi gravida orci in nisl finibus rhoncus. Sed facilisis eros non justo imperdiet, id aliquam neque sagittis. Aliquam euismod sollicitudin lorem at mattis.'
+            'title' => 'Orçamento',
+            'text' => 'Realizamos o orçamento gratuito e sem compromisso para todos os serviços de conserto e manutenção de computadores e notebooks.'
         ])->push([
-            'title' => 'Como solicitar orçamento',
-            'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh eget porta rhoncus. Vestibulum egestas vel nibh pretium dictum. Ut consequat ligula neque, non pulvinar ipsum blandit sed. Mauris sit amet nunc magna. Aenean sed volutpat ligula. Morbi gravida orci in nisl finibus rhoncus. Sed facilisis eros non justo imperdiet, id aliquam neque sagittis. Aliquam euismod sollicitudin lorem at mattis.'
+            'title' => 'Garantia',
+            'text' => 'Oferecemos garantia em todos os nossos serviços e produtos. Código de Defesa do Consumidor - Lei nº 8.078, de 11 de setembro de 1990.'
+        ])->push([
+            'title' => 'Pense Verde',
+            'text' => 'Repare seus eletrônicos ao invés de descartá-los. Ajude a natureza.'
         ]);
 
         return inertia('Site/Home/Index', [

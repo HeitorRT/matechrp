@@ -17,12 +17,4 @@ class ServiceController extends Controller
 
         return inertia('Site/Services/Index', ['services' => $services]);
     }
-
-    /**
-     * @return Response
-     */
-    public function show(int $id): Response
-    {
-        return inertia('Site/Services/Show');
-    }
 }

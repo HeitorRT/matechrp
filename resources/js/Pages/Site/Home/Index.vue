@@ -13,8 +13,6 @@
     const slide = ref(1);
     const autoplay = ref(false);
 
-    const mouseOverIndex = ref(null);
-
     const processIndexSelected = ref(null);
 </script>
 
@@ -43,7 +41,6 @@
                         :name="index" 
                         class="no-padding"
                     >
-                        <!-- <q-img  :src="item.image"/> -->
                         <q-img 
                             class="full-height" 
                             :src="item.image"
@@ -98,9 +95,7 @@
                     <div v-for="(service, index) in props.services" :key="index">
                         <div style="margin: 0 24px 0 0;">
                             <div
-                                class="site-img-hover-zoom cursor-pointer app-br-16"
-                                @mouseover="mouseOverIndex = index"
-                                @mouseleave="mouseOverIndex = null"
+                                class="  app-br-16"
                             >
                                 <q-img
                                     :src="service.srcImg"
@@ -108,15 +103,6 @@
                                     width="373px"
                                     height="500px"
                                 >
-                                    <div class="absolute-full text-subtitle2 flex flex-center" :class="{ transparent: mouseOverIndex != index }">
-                                        <div class="flex flex-center" v-if="mouseOverIndex == index">
-                                            <div class="q-mr-sm app-fs-14 text-uppercase">
-                                                Ver mais
-                                            </div>
-
-                                            <q-icon name="arrow_right_alt" size="xs"/>
-                                        </div>
-                                    </div>
                                     <div class="absolute-bottom text-uppercase text-no-wrap">
                                         <q-icon :name="service.icon" size="xs" class="q-ml-sm"/>
 
@@ -161,12 +147,13 @@
 
             <div class="row q-col-gutter-lg">
                 <div 
-                    class="col-12 col-md-4" 
+                    class="col-12 col-md-3"
                     v-for="process, index in ourProcesses"
                     @mouseover="processIndexSelected = index"
                     @mouseleave="processIndexSelected = null"
                 >
                     <q-card 
+                        style="min-height: 300px;"
                         class="app-br-16"
                         :class="{
                             'shadow-10': processIndexSelected == index,
@@ -179,7 +166,7 @@
                         </q-card-section>
 
                         <q-card-section class="q-px-lg">
-                            <div class="q-py-lg app-fs-15 app-fw-200 text-justify">
+                            <div class="q-py-lg app-fs-15 app-fw-200 text-center">
                                 {{ process.text }}
                             </div>
                         </q-card-section>
@@ -189,7 +176,7 @@
         </div>
 
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6326.896027282484!2d-46.64570939219926!3d-23.598067506081108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a264d6b6611%3A0xae18ff6a2797997b!2sHospital%20S%C3%A3o%20Paulo!5e1!3m2!1spt-BR!2sbr!4v1690757710215!5m2!1spt-BR!2sbr" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.180727096364!2d-47.815704499999995!3d-21.1849784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9beeefdb26e87%3A0x482ff78f8b66942b!2sR.%20Visc.%20de%20Inha%C3%BAma%2C%201657%20-%20Jardim%20Sumare%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014025-100!5e0!3m2!1spt-BR!2sbr!4v1695839067832!5m2!1spt-BR!2sbr" 
             allowfullscreen="" 
             style="width: 100%; height: 700px;"
             loading="lazy" 

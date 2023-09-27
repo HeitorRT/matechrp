@@ -35,7 +35,7 @@
                             style=" width: 300px"
                             class="bg-white app-br-16"
                         >
-                            <q-card flat class="app-br-16">
+                            <q-card flat class="app-br-16" >
                                 <q-img :src="service.srcImg" height="250px">
                                     <div class="absolute-bottom text-uppercase text-no-wrap">
                                         <q-icon :name="service.icon" size="xs" class="q-ml-sm"/>
@@ -44,23 +44,8 @@
                                     </div>
                                 </q-img>
                         
-                                <q-card-section style="height: 130px;">
-                                    <div class="text-subtitle2"> {{ service.text }} </div>
-                                </q-card-section>
-
-                                <q-card-section class="q-pa-none">
-                                    <q-btn
-                                        @click="showService(service.id)"
-                                        color="blue"
-                                        class="full-width app-br-br-16 app-br-bl-16"
-                                        flat
-                                    >
-                                        <div class="q-mr-sm app-fs-14">
-                                            Ver mais 
-                                        </div>
-
-                                        <q-icon name="arrow_right_alt" size="xs"/>
-                                    </q-btn>
+                                <q-card-section style="min-height: 350px">
+                                    <div class="text-subtitle2 text-justify"> {{ service.text }} </div>
                                 </q-card-section>
                             </q-card>
                         </q-intersection>
