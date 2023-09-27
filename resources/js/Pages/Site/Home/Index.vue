@@ -85,7 +85,7 @@
             </div>
         </div>
         
-        <div class="row flex flex-center app-my-100 bg-dark">
+        <div class="row flex flex-center bg-dark">
             <div class="col-12 flex flex-center text-white app-fs-30 app-fw-650 q-mt-xl q-mb-xl">
                 Serviços
             </div>
@@ -140,7 +140,7 @@
             </div>
         </div>
 
-        <div class="site-container-core q-py-xl q-my-xl">
+        <div class="site-container-core q-py-xl q-mb-xl">
             <div class="flex flex-center app-fs-30 app-fw-650 q-mb-xl">
                 Nossos processos
             </div>
@@ -176,9 +176,9 @@
         </div>
 
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.180727096364!2d-47.815704499999995!3d-21.1849784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9beeefdb26e87%3A0x482ff78f8b66942b!2sR.%20Visc.%20de%20Inha%C3%BAma%2C%201657%20-%20Jardim%20Sumare%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014025-100!5e0!3m2!1spt-BR!2sbr!4v1695839067832!5m2!1spt-BR!2sbr" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.180727096364!2d-47.815704499999995!3d-21.1849784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9beeefdb26e87%3A0x482ff78f8b66942b!2sR.%20Visc.%20de%20Inha%C3%BAma%2C%201657%20-%20Jardim%20Sumare%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014025-100!5e0!3m2!1spt-BR!2sbr!4v1695840562358!5m2!1spt-BR!2sbr" 
+            style="border:0; width: 100%; height: 700px;" 
             allowfullscreen="" 
-            style="width: 100%; height: 700px;"
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
         >
