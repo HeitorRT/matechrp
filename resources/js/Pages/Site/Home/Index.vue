@@ -153,7 +153,7 @@
                     @mouseleave="processIndexSelected = null"
                 >
                     <q-card 
-                        style="min-height: 300px;"
+                        style="min-height: 300px; height: 300px;"
                         class="app-br-16"
                         :class="{
                             'shadow-10': processIndexSelected == index,
