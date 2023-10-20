@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/home');
 
-Route::middleware(['ip_check'])->group(function() {
+Route::group(function() {
     Route::get('/home', [HomeController::class, 'index'])->name('site.home');
     Route::get('/soon', [HomeController::class, 'soon'])->name('site.soon');
     Route::get('/about-us', [AboutUsController::class, 'index'])->name('site.about-us');
