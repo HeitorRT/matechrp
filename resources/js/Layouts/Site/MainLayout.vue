@@ -1,5 +1,4 @@
 <script setup>
-    import TopBar from '@/Components/Site/TopBar/Index.vue';
     import BottomBar from '@/Components/Site/BottomBar/Index.vue';
     import { ref, computed } from 'vue';
     import { useForm } from '@inertiajs/inertia-vue3';
@@ -18,14 +17,11 @@
         label: 'Página Inicial',
         route: 'site.home'
     }, {
-        label: 'Quem somos',
-        route: 'site.about-us'
-    }, {
         label: 'Serviços',
         route: 'site.services'
     }, {
-        label: 'Contato',
-        route: 'site.contact'
+        label: 'Download',
+        route: 'site.download'
     }];
 
     const isMobile = computed(() => !$q.screen.gt.sm)

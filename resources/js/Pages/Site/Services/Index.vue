@@ -6,8 +6,6 @@
         services: Object,
     });
 
-    const showService = (service_id) => useForm().get(route('site.services.show', service_id))
-   
 </script>
 
 <template>

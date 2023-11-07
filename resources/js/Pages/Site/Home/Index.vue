@@ -6,12 +6,9 @@
 
     const props = defineProps({
         services: Object,
-        topCarrousel: Array,
+        topCarrouselImage: String,
         ourProcesses: Array
     });
-
-    const slide = ref(1);
-    const autoplay = ref(false);
 
     const processIndexSelected = ref(null);
 </script>
@@ -22,66 +19,11 @@
     <MainLayout>
         <div class="row flex flex-center">
             <div class="col-12 col-md-11 q-py-xl">
-                <q-carousel
-                    animated
-                    swipeable
-                    v-model="slide"
-                    infinite
-                    :autoplay="autoplay"
-                    transition-prev="slide-right"
-                    transition-next="slide-left"
-                    @mouseenter="autoplay = false"
-                    @mouseleave="autoplay = true"
+                <q-img 
                     height="730px"
                     class="bg-grey-9 shadow-5 rounded-borders"
-                    ref="carousel"
-                >
-                    <q-carousel-slide 
-                        v-for="item, index in topCarrousel"
-                        :name="index" 
-                        class="no-padding"
-                    >
-                        <q-img 
-                            class="full-height" 
-                            :src="item.image"
-                        />
-                    </q-carousel-slide>
-
-                    <template v-slot:control>
-                        <q-carousel-control
-                            position="left"
-                            :offset="[-30, 300]"
-                        >
-                            <q-btn
-                                color="white"
-                                padding="none"
-                                flat
-                                dense
-                                @click="$refs.carousel.previous()"
-                                unelevated
-                                style="padding-right: 0px; !important"
-                            >
-                                <q-icon name="sym_o_chevron_left" size="150px"/>
-                            </q-btn>
-                        </q-carousel-control>
-
-                        <q-carousel-control
-                            position="right"
-                            :offset="[-30, 300]"
-                        >
-                            <q-btn
-                                color="white"
-                                padding="none"
-                                flat
-                                dense
-                                @click="$refs.carousel.next()"
-                                unelevated
-                            >
-                                <q-icon name="sym_o_chevron_right" size="150px"/>
-                            </q-btn>
-                        </q-carousel-control>
-                    </template>
-                </q-carousel>
+                    :src="topCarrouselImage"
+                />
             </div>
         </div>
         
@@ -176,12 +118,39 @@
         </div>
 
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.180727096364!2d-47.815704499999995!3d-21.1849784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9beeefdb26e87%3A0x482ff78f8b66942b!2sR.%20Visc.%20de%20Inha%C3%BAma%2C%201657%20-%20Jardim%20Sumare%2C%20Ribeir%C3%A3o%20Preto%20-%20SP%2C%2014025-100!5e0!3m2!1spt-BR!2sbr!4v1695840562358!5m2!1spt-BR!2sbr" 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14880.722908385456!2d-47.8157045!3d-21.1849784!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9bfaea1033077%3A0x4b50c1b45431ea7c!2sMATECH%20RP!5e0!3m2!1spt-BR!2sbr!4v1699388921008!5m2!1spt-BR!2sbr" 
             style="border:0; width: 100%; height: 700px;" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
         >
         </iframe>
+
+        <div class="site-container-core-secondary q-py-xl">
+            <div class="row flex items-start justify-center">
+                <div class="col-2">
+                    <span class="text-h5 text-bold">Quem somos</span><br><br>
+                    <span>A Matech RP é uma empresa que atua no segmento de informática em Ribeirão Preto, com manutenção e venda de periféricos.</span>
+                </div>
+                <q-separator color="black" class="q-mx-xl" vertical />
+
+                <div class="col-2">
+                    <span class="text-h5 text-bold">Visão</span><br><br>
+                    <span>Ser uma Empresa que entenda e principalmente, atenda às necessidades de seus clientes, facilitando e acrescentando seu domínio na área de Informática, buscando desta forma, sempre aprimorar suas técnicas.</span>
+                </div>
+                <q-separator color="black" class="q-mx-xl" vertical />
+
+                <div class="col-2">
+                    <span class="text-h5 text-bold">Valores</span><br><br>
+                    <span>Trabalhar de maneira ética, transparente, honesta, ambiental e socialmente correta.</span>
+                </div>
+                <q-separator color="black" class="q-mx-xl" vertical />
+                
+                <div class="col-2">
+                    <span class="text-h5 text-bold">Missão</span><br><br>
+                    <span>Buscamos atuar com excelência nos setores de Informática, oferecer atendimento e serviços de qualidade tanto para pessoa física ou jurídica, garantindo tranquilidade e satisfação aos nossos clientes.</span>
+                </div>
+            </div>
+        </div>
     </MainLayout>
 </template>
