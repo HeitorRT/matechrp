@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="text-white app-fs-18 q-mt-lg">
-                    A MatechRP é especializada na manutenção e conserto de televisores, monitores, notebooks, computadores, upgrades e montagem.
+                    A Matech RP é especializada na manutenção e conserto de:
                 </div>
             </div>
 

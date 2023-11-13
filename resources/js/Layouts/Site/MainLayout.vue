@@ -32,13 +32,15 @@
     <q-layout>
         <q-header>
             <q-toolbar class="site-topbar bg-grey-3 row justify-between">
-                <q-icon 
-                    name="computer" 
-                    :size="isMobile ? '30px' : '70px'" 
-                    color="blue-grey-10"
+                <q-img 
+                    :height="isMobile ? '30px' : '70px'"
+                    style="max-width: 400px;"
+                    src="/img/matechrp-logo.png"
+                    fit="scale-down"
+                    class="q-mt-md"
                 />
-        
-                <div class="row justify-center" v-if="isNotMobile">
+
+                <div class="row justify-center q-mt-md" v-if="isNotMobile">
                     <div
                         v-for="tab in tabs"
                         class="q-mr-xl app-lh-24 app-fs-19 cursor-pointer "
@@ -78,10 +80,10 @@
             class="bg-grey-3"
         >
             <q-scroll-area class="fit text-center">
-                <q-icon 
-                    name="computer" 
-                    size="50px" 
-                    color="blue-grey-10"
+                <q-img 
+                    style="max-width: 250px; height: 70px;"
+                    src="/img/matechrp-logo.png"
+                    fit="scale-down"
                     class="q-my-xl"
                 />
 

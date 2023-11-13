@@ -1,8 +1,9 @@
 <script setup>
     import MainLayout from '@/Layouts/Site/MainLayout.vue';
     import { Head } from '@inertiajs/inertia-vue3';
-    import { ref } from 'vue';
+    import { ref, computed } from 'vue';
     import VueHorizontal from "vue-horizontal";
+    import { useQuasar } from 'quasar'
 
     const props = defineProps({
         services: Object,
@@ -11,6 +12,12 @@
     });
 
     const processIndexSelected = ref(null);
+
+    const $q = useQuasar()
+
+    const isComputer = computed(() => $q.screen.gt.sm)
+    const isMobile = computed(() => $q.screen.lt.md)
+
 </script>
 
 <template>
@@ -18,11 +25,17 @@
 
     <MainLayout>
         <div class="row flex flex-center">
-            <div class="col-12 col-md-11 q-py-xl">
+            <div 
+                class="col-12 col-md-11 q-py-xl" 
+                :class="{
+                    'q-px-lg': isMobile
+                }"
+            >
                 <q-img 
-                    height="730px"
-                    class="bg-grey-9 shadow-5 rounded-borders"
+                    :height="isComputer? '730px' : '350px'"
+                    class="bg-white shadow-5 rounded-borders"
                     :src="topCarrouselImage"
+                    fit="contain"
                 />
             </div>
         </div>
@@ -107,9 +120,12 @@
                             </div>
                         </q-card-section>
 
-                        <q-card-section class="q-px-lg">
-                            <div class="q-py-lg app-fs-15 app-fw-200 text-center">
-                                {{ process.text }}
+                        <q-card-section>
+                            <div 
+                                class="q-py-lg app-fs-15 app-fw-200"
+                                :class="process.class"
+                            >
+                                <span v-html="process.text"></span>
                             </div>
                         </q-card-section>
                     </q-card>
@@ -128,25 +144,45 @@
 
         <div class="site-container-core-secondary q-py-xl">
             <div class="row flex items-start justify-center">
-                <div class="col-2">
+                <div 
+                    class="col-12 col-md-2" 
+                    :class="{
+                        'q-mb-lg': isMobile
+                    }"
+                >
                     <span class="text-h5 text-bold">Quem somos</span><br><br>
                     <span>A Matech RP é uma empresa que atua no segmento de informática em Ribeirão Preto, com manutenção e venda de periféricos.</span>
                 </div>
-                <q-separator color="black" class="q-mx-xl" vertical />
+                <q-separator color="black" class="q-mx-xl" vertical v-if="isComputer" />
 
-                <div class="col-2">
+                <div 
+                    class="col-12 col-md-2" 
+                    :class="{
+                        'q-mb-lg': isMobile
+                    }"
+                >
                     <span class="text-h5 text-bold">Visão</span><br><br>
                     <span>Ser uma Empresa que entenda e principalmente, atenda às necessidades de seus clientes, facilitando e acrescentando seu domínio na área de Informática, buscando desta forma, sempre aprimorar suas técnicas.</span>
                 </div>
-                <q-separator color="black" class="q-mx-xl" vertical />
+                <q-separator color="black" class="q-mx-xl" vertical v-if="isComputer" />
 
-                <div class="col-2">
+                <div 
+                    class="col-12 col-md-2" 
+                    :class="{
+                        'q-mb-lg': isMobile
+                    }"
+                >
                     <span class="text-h5 text-bold">Valores</span><br><br>
                     <span>Trabalhar de maneira ética, transparente, honesta, ambiental e socialmente correta.</span>
                 </div>
-                <q-separator color="black" class="q-mx-xl" vertical />
+                <q-separator color="black" class="q-mx-xl" vertical v-if="isComputer" />
                 
-                <div class="col-2">
+                <div 
+                    class="col-12 col-md-2" 
+                    :class="{
+                        'q-mb-lg': isMobile
+                    }"
+                >
                     <span class="text-h5 text-bold">Missão</span><br><br>
                     <span>Buscamos atuar com excelência nos setores de Informática, oferecer atendimento e serviços de qualidade tanto para pessoa física ou jurídica, garantindo tranquilidade e satisfação aos nossos clientes.</span>
                 </div>
