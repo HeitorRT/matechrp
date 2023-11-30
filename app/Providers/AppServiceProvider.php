@@ -30,6 +30,6 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        JsonResource::withoutWrapping();
+        // JsonResource::withoutWrapping();
     }
 }
