@@ -13,8 +13,6 @@ class HomeController extends Controller
      */
     public function index(): Response
     {
-        dd('aqui');
-        
         $services = (new ServicesDTO)->getAll();
 
         // $topCarrouselImage = 'https://images.unsplash.com/photo-1614624532983-4ce03382d63d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2V0dXB8ZW58MHx8MHx8fDA%3D&w=1000&q=80';
