@@ -19,9 +19,6 @@
     }, {
         label: 'Serviços',
         route: 'site.services'
-    }, {
-        label: 'Download',
-        route: 'site.download'
     }];
 
     const isMobile = computed(() => !$q.screen.gt.sm)
