@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="text-white app-fs-18 q-mt-lg">
-                    A Matech RP é especializada na manutenção e conserto de:
+                    A Matech RP faz manutenção e conserto de:
                 </div>
             </div>
 

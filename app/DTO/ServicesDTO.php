@@ -18,13 +18,13 @@ class ServicesDTO
         $items = (object) [(object) [
             'id' => 1,
             'title' => 'NOTEBOOKS',
-            'text' => 'Consertos especializados para notebooks de todas as marcas e modelos, incluindo reparo de hardware e software. Executamos troca de carcaça, tela, dobradiça, teclado, HD, SSD, bateria, carregador, dc jack, wireless, touchpad, webcam, microfone, alto-falante.',
+            'text' => 'Consertos para notebooks. Executamos troca de carcaça, tela, dobradiça, teclado, HD, SSD, bateria, carregador, dc jack, wireless, touchpad, webcam, microfone, alto-falante.',
             'srcImg' => 'https://techinter.com.br/wp-content/uploads/2023/01/Melhores-notebooks-ate-2000-reais.jpg',
             'icon' => 'laptop_windows'
         ], (object) [
             'id' => 2,
             'title' => 'COMPUTADORES',
-            'text' => 'Resolvemos problemas desde placa mãe, processador, memória ram, placa de vídeo, fonte atx, cooler, water cooler, hd, ssd, nvme, m2 sata, gabinete, atualização de bios, limpeza de hardware e instalação de sistema operacional.',
+            'text' => 'Resolvemos problemas desde placa mãe, processador, memória, placa de vídeo, fonte, cooler, watercooler, hd, ssd, nvme, m2 sata, gabinete, atualização de bios, limpeza de hardware e instalação de sistema operacional.',
             'srcImg' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwmVVL2DQnoKN66sIjmVRRhmsycOTi5Zo1nQ&usqp=CAU',
             'icon' => 'desktop_windows'
         ], (object) [
@@ -48,7 +48,7 @@ class ServicesDTO
         ], (object) [
             'id' => 6,
             'title' => 'LIMPEZA DE HARDWARE',
-            'text' => 'A manutenção preventiva garante uma vida útil maior e um melhor funcionamento dos dispositivos, evitando, por exemplo, o mau funcionamento do software ou a perda de componentes importantes, como processador, memória, placa de vídeo e fonte de alimentação. Deve ser realizada, independentemente de o computador apresentar problemas ou defeitos, pelo menos, uma vez por ano.',
+            'text' => 'A manutenção preventiva garante uma vida útil maior e um melhor funcionamento dos dispositivos, evitando, por exemplo, o mau funcionamento do sistema ou a perda de componentes importantes, como processador, memória, placa de vídeo e fonte de alimentação. Deve ser realizada, independentemente de o computador apresentar problemas ou defeitos, pelo menos, uma vez por ano.',
             'srcImg' => 'https://static.wixstatic.com/media/1d9c31_e1357a383f63495e8633c0292a311443~mv2.jpg/v1/fill/w_517,h_509,al_c,lg_1,q_80,enc_auto/sdfc-758x424.jpg',
             'icon' => 'cleaning_services'
         ]];
