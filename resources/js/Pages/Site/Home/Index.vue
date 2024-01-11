@@ -24,22 +24,6 @@
     <Head title="Home"/>
 
     <MainLayout>
-        <div class="row flex flex-center">
-            <div 
-                class="col-12 col-md-11 q-py-xl" 
-                :class="{
-                    'q-px-lg': isMobile
-                }"
-            >
-                <q-img 
-                    :height="isComputer? '730px' : '350px'"
-                    class="bg-white shadow-5 rounded-borders"
-                    :src="topCarrouselImage"
-                    fit="contain"
-                />
-            </div>
-        </div>
-        
         <div class="row flex flex-center bg-dark">
             <div class="col-12 flex flex-center text-white app-fs-30 app-fw-650 q-mt-xl q-mb-xl">
                 Serviços
